@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="title">
+        <h1>YongSeong Velog</h1>
+    </div>
+
+    <div class="slider">
+        <div class="slider-inner">
+            <div class="slider-item"></div>
+            <div class="slider-item"></div>
+            <div class="slider-item"></div>
+            <div class="slider-item"></div>
+            <div class="slider-item"></div>
+            <div class="slider-item"></div>
+        </div>
+    </div>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .title {
+    padding: 100px;
+    }
+
+    .slider {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 80%;
+    height: 200px;
+    overflow: hidden;
+    }
+
+    .slider-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    pointer-events: none;
+    }
+
+    .slider-item {
+    height: 100%;
+    background-color: black;
+    }
+</style>
+<script>
+    let slider = document.querySelector(".slider")
+    let innerSlider = document.querySelector(".slider-inner")
+    let pressed = false
+    let startx
+    let x
+
+    slider.addEventListener("mousedown", e => {
+        pressed = true
+        startx = e.offsetX - innerSlider.offsetLeft
+        slider.style.cursor = "grabbing"
+    })
+
+    slider.addEventListener("mouseenter", () => {
+        slider.style.cursor = "grab"
+    })
+
+    slider.addEventListener("mouseup", () => {
+        slider.style.cursor = "grab"
+    })
+
+    window.addEventListener("mouseup", () => {
+        pressed = false
+    })
+
+    slider.addEventListener("mousemove", e => {
+        if (!pressed) return
+        e.preventDefault()
+        x = e.offsetX
+
+        innerSlider.style.left = `${x - startx}px`
+        checkboundary()
+    })
+
+    function checkboundary() {
+        let outer = slider.getBoundingClientRect()
+        let inner = innerSlider.getBoundingClientRect()
+
+        if (parseInt(innerSlider.style.left) > 0) {
+            innerSlider.style.left = "0px"
+        } else if (inner.right < outer.right) {
+            innerSlider.style.left = `-${inner.width - outer.width}px`
+        }
+    }
+</script>
+</body>
+</html>
