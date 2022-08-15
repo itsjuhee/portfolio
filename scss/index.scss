@@ -1,5 +1,14 @@
 @import "_common";
 
+html, body {
+    overflow: scroll;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar { 
+        width: 0 !important;
+        display: none; 
+    }
+}
+
 main {
     overflow-x: hidden;
     width: 100%;
@@ -148,7 +157,7 @@ main {
         }
         .pro {
             width: 100%; margin: 0 auto;
-            padding: 8% 5% 5%;
+            padding: 5% 5% 10%;
             background-color: #000;
             box-shadow: 40px 40px 40px 40px rgba(0, 0, 0, 0.5);
             .center {
@@ -158,12 +167,14 @@ main {
                 span {font-size: 24px; font-weight: 400;}
             }
             .slide {
+                position: relative;
+                margin-top: 4%;
                 ul {
-                    transform: translateX(50%);
-                    margin: 6% 0 12%;
+                    position: absolute; left: 54%;
                     display: flex;
                     li {
                         margin-right: 4%;
+                        width: 25vw;
                         .slide-img {
                             overflow: hidden;
                             &:hover {
@@ -188,8 +199,9 @@ main {
         }
         .end {
             width: 90%; margin: 0 auto;
+            padding-top: 20%;
             .main {
-                margin: 20% auto;
+                margin: 0 auto 20%;
                 p {
                     font-size: 150px;
                     text-align: center;
@@ -223,6 +235,72 @@ footer {
                 p {font-size: 20px; font-weight: 500; margin-bottom: 4%;}
                 span {color: #797979;}
             }
+        }
+    }
+}
+
+.pro {
+    position: relative;
+    // 팝업 스크롤시 뒷 내용은 고정
+    // overflow: hidden;
+    .popup {
+        &.active {display: block;}
+        display: none;
+        position: absolute; top: 20%; left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        background-color: #000;
+        width: 90%; padding: 4%;
+        p, span, a {color: #fff;}
+        .close {
+            text-align: right;
+            font-size: 20px;
+            margin-bottom: 4%;
+        }
+        .title {
+            span {font-weight: 100;}
+            p {font-size: 24px; font-weight: 500;}
+        }
+        .overview {
+            margin: 5% 0 10%;
+            display: flex;
+            justify-content: space-between;
+            .main-img {
+                width: 60%;
+                img {width: 100%;}
+            }
+            .text {
+                width: 36%;
+                ul {
+                    li {
+                        margin-bottom: 3%;
+                        display: flex;
+                        align-items: center;
+                        p {font-weight: 500; width: 40%;}
+                        span {font-size: 14px;}
+                        &:last-of-type {
+                            margin: 10% 0 15%;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            p {margin-bottom: 3%;}
+                        }
+                    }
+                }
+                a {
+                    font-size: 20px; font-weight: 500;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .detail {
+            img {
+                width: 100%;
+                margin: 5% 0 10%;
+            }
+        }
+        .button {
+            display: flex;
+            justify-content: space-between;
         }
     }
 }

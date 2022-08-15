@@ -70,6 +70,16 @@ h3 {
   font-size: 24px;
 }
 
+html, body {
+  overflow: scroll;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+
 main {
   overflow-x: hidden;
   width: 100%;
@@ -381,7 +391,7 @@ main .cont .about .ski ul li span::before {
 main .cont .pro {
   width: 100%;
   margin: 0 auto;
-  padding: 8% 5% 5%;
+  padding: 5% 5% 10%;
   background-color: #000;
   -webkit-box-shadow: 40px 40px 40px 40px rgba(0, 0, 0, 0.5);
           box-shadow: 40px 40px 40px 40px rgba(0, 0, 0, 0.5);
@@ -396,10 +406,14 @@ main .cont .pro .center span {
   font-weight: 400;
 }
 
+main .cont .pro .slide {
+  position: relative;
+  margin-top: 4%;
+}
+
 main .cont .pro .slide ul {
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
-  margin: 6% 0 12%;
+  position: absolute;
+  left: 54%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,6 +421,7 @@ main .cont .pro .slide ul {
 
 main .cont .pro .slide ul li {
   margin-right: 4%;
+  width: 25vw;
 }
 
 main .cont .pro .slide ul li .slide-img {
@@ -447,10 +462,11 @@ main .cont .pro .slide ul li p {
 main .cont .end {
   width: 90%;
   margin: 0 auto;
+  padding-top: 20%;
 }
 
 main .cont .end .main {
-  margin: 20% auto;
+  margin: 0 auto 20%;
 }
 
 main .cont .end .main p {
@@ -514,5 +530,121 @@ footer ul li .txt p {
 
 footer ul li .txt span {
   color: #797979;
+}
+
+.pro {
+  position: relative;
+}
+
+.pro .popup {
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1000;
+  background-color: #000;
+  width: 90%;
+  padding: 4%;
+}
+
+.pro .popup.active {
+  display: block;
+}
+
+.pro .popup p, .pro .popup span, .pro .popup a {
+  color: #fff;
+}
+
+.pro .popup .close {
+  text-align: right;
+  font-size: 20px;
+  margin-bottom: 4%;
+}
+
+.pro .popup .title span {
+  font-weight: 100;
+}
+
+.pro .popup .title p {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.pro .popup .overview {
+  margin: 5% 0 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pro .popup .overview .main-img {
+  width: 60%;
+}
+
+.pro .popup .overview .main-img img {
+  width: 100%;
+}
+
+.pro .popup .overview .text {
+  width: 36%;
+}
+
+.pro .popup .overview .text ul li {
+  margin-bottom: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pro .popup .overview .text ul li p {
+  font-weight: 500;
+  width: 40%;
+}
+
+.pro .popup .overview .text ul li span {
+  font-size: 14px;
+}
+
+.pro .popup .overview .text ul li:last-of-type {
+  margin: 10% 0 15%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.pro .popup .overview .text ul li:last-of-type p {
+  margin-bottom: 3%;
+}
+
+.pro .popup .overview .text a {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.pro .popup .detail img {
+  width: 100%;
+  margin: 5% 0 10%;
+}
+
+.pro .popup .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=index.css.map */
