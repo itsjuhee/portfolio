@@ -4,21 +4,27 @@ window.onscroll = function() {subHeader()};
 const 
 header = document.querySelector('.sub-header'),
 project = document.querySelector('.pro'),
-outro = document.querySelector('.end');
-
+outro = document.querySelector('.end'),
+rotate = document.querySelector('.end .main');
 function subHeader() {
     if (window.pageYOffset > header.offsetTop) {
         header.classList.add('sticky');
     } else {
         header.classList.remove('sticky');
     }
+    
     // black header
     if (window.pageYOffset > project.offsetTop-10 && window.pageYOffset < outro.offsetTop) {
         header.classList.add('black');
     } else {
         header.classList.remove('black');
     }
+    
+    // end letter
+    if (window.pageYOffset > rotate.offsetTop-300) $('.end .main').addClass('active');
 }
+
+$('.sub-header span').css('transform',`translateX(${$('nav a').eq(0).offset().left}px)`).css('width', `${$('nav a').eq(0).width()}px`);
 
 // header scroll
 $('nav a').on('click', pagemove);
@@ -33,7 +39,12 @@ function pagemove(){
 
     $('nav a').removeClass('active');
     $(this).addClass('active');
+
+    // bottom bar
+    console.log(`${$(this).width()}px`)
+    $('.sub-header span').css('transform',`translateX(${$(this).offset().left}px)`).css('width', `${$(this).width()}px`);
 };
+
 
 // slider
 $(function(){
@@ -114,14 +125,26 @@ $.ajax({
             $('.popup').css('background',`${p[0].bg}`,'color',`${p[0].font}`);
             $('.popup p, .popup span, .popup a').css('color',`${p[0].font}`);
 
-            $('.popup').addClass('active');
+            $('.layer-popup').addClass('active');
+
+            // no scroll
+            $('html').css('overflow', 'hidden');
 
             // close
-            // 팝업 바깥 영역 클릭시 
             $('.popup .close').on('click', function(){
-                $('.popup').removeClass('active');
+                $('.layer-popup').removeClass('active');
+                $('html').css('overflow', 'scroll');
             });
 
+            // click out of popup 
+            $(document).mouseup(function (p){
+                let layer = $('.layer-popup');
+                if(layer.has(p.target).length === 0){
+                    layer.removeClass('active');
+                    $('html').css('overflow', 'scroll');
+                }
+            });
+            
             // button
             $('.button span').eq(0).on('click', function(){
                 if(idx>0) idx--;
@@ -132,7 +155,6 @@ $.ajax({
                 slidePopup(idx)
             });
         }
-
         $('.slide li').on('click', function(){
             slidePopup($(this).index())
         })

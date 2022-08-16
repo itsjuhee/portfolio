@@ -70,6 +70,16 @@ h3 {
   font-size: 24px;
 }
 
+::-moz-selection {
+  background-color: #000;
+  color: #fff;
+}
+
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+
 html, body {
   overflow: scroll;
   -ms-overflow-style: none;
@@ -229,12 +239,20 @@ main .sub-header.black {
   background-color: #000;
 }
 
+main .sub-header.black span {
+  background-color: #fff;
+}
+
 main .sub-header.black nav a {
   color: #fff;
 }
 
-main .sub-header.black nav a.active {
-  border-bottom: 2px solid #fff;
+main .sub-header span {
+  display: block;
+  height: 2px;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 main .sub-header nav a {
@@ -245,7 +263,6 @@ main .sub-header nav a {
 
 main .sub-header nav a.active {
   font-weight: 500;
-  border-bottom: 2px solid #000;
 }
 
 main .cont .about {
@@ -476,18 +493,33 @@ main .cont .end .main p {
 
 main .cont .end .main p:nth-of-type(1) {
   font-weight: 100;
+  -webkit-transform: rotate(-15deg) translateX(30%);
+          transform: rotate(-15deg) translateX(30%);
 }
 
 main .cont .end .main p:nth-of-type(2) {
   font-weight: 300;
+  -webkit-transform: rotate(15deg) translateX(-30%);
+          transform: rotate(15deg) translateX(-30%);
 }
 
 main .cont .end .main p:nth-of-type(3) {
   font-weight: 400;
+  -webkit-transform: rotate(165deg);
+          transform: rotate(165deg);
 }
 
 main .cont .end .main p:nth-of-type(4) {
   font-weight: 500;
+  -webkit-transform: translateX(40%);
+          transform: translateX(40%);
+}
+
+main .cont .end .main.active p {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 main .cont .end ul {
@@ -532,47 +564,55 @@ footer ul li .txt span {
   color: #797979;
 }
 
-.pro {
-  position: relative;
-}
-
-.pro .popup {
+.layer-popup {
+  overflow-y: scroll;
   display: none;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  position: fixed;
   z-index: 1000;
-  background-color: #000;
-  width: 90%;
-  padding: 4%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.pro .popup.active {
+.layer-popup.active {
   display: block;
 }
 
-.pro .popup p, .pro .popup span, .pro .popup a {
+.layer-popup::-webkit-scrollbar {
+  display: none;
+}
+
+.layer-popup .popup {
+  margin: 0 auto;
+  padding: 4%;
+  width: 90%;
+  background-color: #000;
+}
+
+.layer-popup .popup p, .layer-popup .popup span, .layer-popup .popup a {
   color: #fff;
 }
 
-.pro .popup .close {
+.layer-popup .popup .close {
   text-align: right;
   font-size: 20px;
   margin-bottom: 4%;
 }
 
-.pro .popup .title span {
+.layer-popup .popup .title span {
   font-weight: 100;
 }
 
-.pro .popup .title p {
+.layer-popup .popup .title p {
   font-size: 24px;
   font-weight: 500;
 }
 
-.pro .popup .overview {
+.layer-popup .popup .overview {
   margin: 5% 0 10%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -582,19 +622,19 @@ footer ul li .txt span {
           justify-content: space-between;
 }
 
-.pro .popup .overview .main-img {
+.layer-popup .popup .overview .main-img {
   width: 60%;
 }
 
-.pro .popup .overview .main-img img {
+.layer-popup .popup .overview .main-img img {
   width: 100%;
 }
 
-.pro .popup .overview .text {
+.layer-popup .popup .overview .text {
   width: 36%;
 }
 
-.pro .popup .overview .text ul li {
+.layer-popup .popup .overview .text ul li {
   margin-bottom: 3%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -604,16 +644,16 @@ footer ul li .txt span {
           align-items: center;
 }
 
-.pro .popup .overview .text ul li p {
+.layer-popup .popup .overview .text ul li p {
   font-weight: 500;
   width: 40%;
 }
 
-.pro .popup .overview .text ul li span {
+.layer-popup .popup .overview .text ul li span {
   font-size: 14px;
 }
 
-.pro .popup .overview .text ul li:last-of-type {
+.layer-popup .popup .overview .text ul li:last-of-type {
   margin: 10% 0 15%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -624,22 +664,22 @@ footer ul li .txt span {
           align-items: flex-start;
 }
 
-.pro .popup .overview .text ul li:last-of-type p {
+.layer-popup .popup .overview .text ul li:last-of-type p {
   margin-bottom: 3%;
 }
 
-.pro .popup .overview .text a {
+.layer-popup .popup .overview .text a {
   font-size: 20px;
   font-weight: 500;
   text-decoration: underline;
 }
 
-.pro .popup .detail img {
+.layer-popup .popup .detail img {
   width: 100%;
   margin: 5% 0 10%;
 }
 
-.pro .popup .button {
+.layer-popup .popup .button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
