@@ -13,23 +13,23 @@ main {
     overflow-x: hidden;
     width: 100%;
     .cover {
-        width: 100%; margin: 9.5% auto;
+        width: 100vw; height: 100vh;
         position: relative;
         .center {
-            width: 80%; margin: 0 auto;
+            width: 80vw; margin: 0 auto; padding-top: 20vh;
             text-align: center;
             p:nth-of-type(1) {
                 animation: cover1 1s linear forwards;
                 @keyframes cover1 {
                     0% {transform: translateX(100%);}
-                    100% {transform: translateX(1%);}
+                    100% {transform: translateX(0%);}
                 }
             }
             p:nth-of-type(2) {
                 animation: cover2 1s linear forwards;
                 @keyframes cover2 {
                     0% {transform: translate(-100%,-40%);}
-                    100% {transform: translate(18%,-40%);}
+                    100% {transform: translate(17%,-40%);}
                 }
             }
             span {
@@ -42,13 +42,13 @@ main {
         }
         .left {
             position: absolute;
-            left: 33%; top: 68%;
+            left: 33vw; top: 59vh;
             animation: cover4 8s forwards;
             @keyframes cover4 {0% {opacity: 0;}}
         }
         .right {
             position: absolute;
-            right: 18%; top: 40%;
+            right: 18vw; top: 43vh;
             span {
                 display: block;
                 width: 260px;
@@ -101,14 +101,17 @@ main {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
-                p {font-size: 24px;}
+                p {font-size: 1.5rem;}
             }
             .edu {
-                width: 50%; margin-bottom: 10%;
-                transform: translateX(90%);
+                width: 40vw; margin-bottom: 10%;
+                transform: translateX(34vw);
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
+                .detail {
+                    margin-left: 4vw;
+                }
             }
             .exp {
                 .des {
@@ -125,12 +128,14 @@ main {
             .ski {
                 margin: 20% auto;
                 .center {
+                    width: 80vw;
+                    margin: 0 auto;
                     display: flex;
                     justify-content: center;
                     p {margin-right: 1%;}
                 }
                 h2 {
-                    font-size: 64px;
+                    font-size: 4rem;
                     margin: 2% auto;
                     white-space: nowrap;
                     animation: letter 16s linear infinite; 
@@ -142,7 +147,7 @@ main {
                 .des {
                     margin: 10% 0; 
                     transform: translateX(12%); 
-                    p {font-size: 36px;}
+                    p {font-size: 2.2rem;}
                 }
                 ul {
                     transform: translateX(15%);
@@ -153,7 +158,7 @@ main {
                     li {
                         width: 40%; margin-bottom: 4%;
                         span {
-                            font-size: 18px;
+                            font-size: 1.2rem;
                             display: block;
                             &::before {
                                 content: '-';
@@ -172,7 +177,7 @@ main {
                 p, span {
                     color: #fff;
                 }
-                span {font-size: 24px; font-weight: 400;}
+                span {font-size: 1.5rem; font-weight: 400;}
             }
             .slide {
                 position: relative;
@@ -200,7 +205,7 @@ main {
                             display: block;
                             margin: 2% 0 1%;
                         }
-                        p {font-size: 24px; font-weight: 400;}
+                        p {font-size: 1.5rem; font-weight: 400;}
                     }
                 }
             }
@@ -211,7 +216,7 @@ main {
             .main {
                 margin: 0 auto 20%;
                 p {
-                    font-size: 150px;
+                    font-size: 9.4rem;
                     text-align: center;
                     &:nth-of-type(1) {font-weight: 100; transform: rotate(-15deg) translateX(30%);}
                     &:nth-of-type(2) {font-weight: 300; transform: rotate(15deg) translateX(-30%);}
@@ -225,26 +230,31 @@ main {
                     }
                 }
             }
-            ul {text-align: center;}
+            ul {
+                text-align: center;
+                .txt {margin-bottom: 4%;}
+            }
         }
     }
 }
 
 footer {
-    width: 90%; margin: 30% auto 10%;
+    width: 90vw; margin: 30% auto 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     .center {
-        p {font-size: 120px;}
+        p {font-size: 7.4rem; width: 50vw;}
     }
     ul {
-        width: 40%;
+        width: 50vw;
         display: flex;
         justify-content: space-between;
         li {
+            margin-left: 1vw;
+            width: 12vw;
             .txt {
-                p {font-size: 20px; font-weight: 500; margin-bottom: 4%;}
+                p {font-size: 1.3rem; font-weight: 500; margin-bottom: 4%;}
                 span, a {color: #797979;}
             }
         }
@@ -262,19 +272,19 @@ footer {
     z-index: 1000;
     left: 0; top: 0; right: 0; bottom: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     .popup {
-        margin: 0 auto; padding: 4%; width: 90%;
+        margin: 5% auto; padding: 4%; width: 80vw;
         background-color: #000;
         p, span, a {color: #fff;}
         .close {
             text-align: right;
-            font-size: 20px;
+            font-size: 1.3rem;
             margin-bottom: 4%;
         }
         .title {
             span {font-weight: 100;}
-            p {font-size: 24px; font-weight: 500;}
+            p {font-size: 1.5rem; font-weight: 500;}
         }
         .overview {
             margin: 5% 0 10%;
@@ -292,7 +302,7 @@ footer {
                         display: flex;
                         align-items: center;
                         p {font-weight: 500; width: 40%;}
-                        span {font-size: 14px;}
+                        span {font-size: 0.9rem;}
                         &:last-of-type {
                             margin: 10% 0 15%;
                             flex-direction: column;
@@ -302,7 +312,7 @@ footer {
                     }
                 }
                 a {
-                    font-size: 20px; font-weight: 500;
+                    font-size: 1.3rem; font-weight: 500;
                     text-decoration: underline;
                 }
             }
@@ -320,3 +330,6 @@ footer {
         }
     }
 }
+
+// RESPONSIVE
+@media (min-width: 1190px) and (max-width: 1619px){}

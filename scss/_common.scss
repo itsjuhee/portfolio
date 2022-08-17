@@ -12,18 +12,18 @@ img{border: none; vertical-align: top;}
 
 *{
     box-sizing: border-box;
-    font-size: 16px; font-weight: 400; font-family: 'Roboto', sans-serif;
+    font-size: 1rem; font-weight: 400; font-family: 'Roboto', sans-serif;
     color: #000;
 }
 
-h3 {font-size: 24px;}
+h3 {font-size: 1.5rem;}
 .center {
     p {
-        font-size: 150px;
+        font-size: 9.4rem;
         font-weight: 600;
     }
     span {
-        font-size: 150px;
+        font-size: 9.4rem;
         font-weight: 200;
     }
 }
@@ -31,7 +31,7 @@ h3 {font-size: 24px;}
     margin-bottom: 8%;
     b {color: #797979; font-weight: 500;}
     p {
-        font-size: 20px;
+        font-size: 1.3rem;
         margin-bottom: 2%;
         span {
             display: inline-block;
@@ -41,7 +41,7 @@ h3 {font-size: 24px;}
     span {color: #797979; line-height: 1.6;}
 }
 .des {
-    p {font-size: 24px;}
+    p {font-size: 1.5rem;}
 }
 
 ::selection {
@@ -50,7 +50,7 @@ h3 {font-size: 24px;}
 }
 
 @mixin flex($a, $b, $c, $d) {
-    display:flex;
+    display: flex;
     justify-content: $a;
     align-items: $b;
     flex-wrap: $c;

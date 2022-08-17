@@ -14,7 +14,7 @@ function subHeader() {
     }
     
     // black header
-    if (window.pageYOffset > project.offsetTop-10 && window.pageYOffset < outro.offsetTop) {
+    if (window.pageYOffset > project.offsetTop-100 && window.pageYOffset < outro.offsetTop) {
         // project
         header.classList.add('black');
         $('.sub-header span').css('transform',`translateX(${$('nav a').eq(1).offset().left}px)`).css('width', `${$('nav a').eq(1).width()}px`);
