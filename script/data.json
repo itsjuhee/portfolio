@@ -97,13 +97,13 @@
             "contri":"100%", 
             "lang":"HTML, CSS, SCSS, JavaScript, jQuery, JSON", 
             "compo":"MAIN 1 Page", 
-            "overview":"As the domestic camping population increases, most of the services are concentrated on camping site reservations, and the number of users dissatisfied with the service is increasing. To this end, we have created a camping information sharing platform service that provides customized information and a better camping experience, and can solve various difficulties encountered in the process of collecting information related to camping. It is a compound word of FOREST and REST, meaning the coexistence of nature and rest.", 
+            "overview":"I tried to make a good first impression, and I made it as light-weight as possible to reduce the loading time. In order not to lose direction, I have prioritized them according to their importance as follows. 1. High-efficiency maintenance 2. Sustainable, not sensitive to fashion 3. Simple and clear message delivery", 
             "website":"https://itsjuhee.github.io/portfolio/", 
             "video":"./resource/video.png",
-            "img1":"./resource/forrest-detail-01.png", 
-            "img2":"./resource/forrest-detail-02.png", 
-            "img3":"./resource/forrest-detail-03.png", 
-            "img4":"./resource/portfolio-main.jpg"
+            "img1":"./resource/portfolio-detail-01.png", 
+            "img2":"./resource/portfolio-detail-02.png", 
+            "img3":"./resource/portfolio-detail-03.png", 
+            "img4":"./resource/portfolio-out.jpg"
         }
     ]
 }

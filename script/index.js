@@ -15,15 +15,30 @@ function subHeader() {
     
     // black header
     if (window.pageYOffset > project.offsetTop-10 && window.pageYOffset < outro.offsetTop) {
+        // project
         header.classList.add('black');
-    } else {
+        $('.sub-header span').css('transform',`translateX(${$('nav a').eq(1).offset().left}px)`).css('width', `${$('nav a').eq(1).width()}px`);
+        $('nav a').removeClass('active')
+        $('nav a').eq(1).addClass('active')
+    } else if (window.pageYOffset < project.offsetTop) {
+        // about me
         header.classList.remove('black');
+        $('.sub-header span').css('transform',`translateX(${$('nav a').eq(0).offset().left}px)`).css('width', `${$('nav a').eq(0).width()}px`);
+        $('nav a').removeClass('active')
+        $('nav a').eq(0).addClass('active')
+    } else {
+        // end
+        header.classList.remove('black');
+        $('.sub-header span').css('transform',`translateX(${$('nav a').eq(2).offset().left}px)`).css('width', `${$('nav a').eq(2).width()}px`);
+        $('nav a').removeClass('active')
+        $('nav a').eq(2).addClass('active')
     }
     
     // end letter
     if (window.pageYOffset > rotate.offsetTop-300) $('.end .main').addClass('active');
 }
 
+// the first bottom bar
 $('.sub-header span').css('transform',`translateX(${$('nav a').eq(0).offset().left}px)`).css('width', `${$('nav a').eq(0).width()}px`);
 
 // header scroll
@@ -41,16 +56,16 @@ function pagemove(){
     $(this).addClass('active');
 
     // bottom bar
-    console.log(`${$(this).width()}px`)
     $('.sub-header span').css('transform',`translateX(${$(this).offset().left}px)`).css('width', `${$(this).width()}px`);
 };
 
 
 // slider
 $(function(){
-    let liHeight = $('.slide ul li:first').height();
-    let ulWidth = (($('.slide ul li').length-1) * 2 ) * $('.slide ul li:first').outerWidth(true);
-    let slideWidth = (($('.slide ul li').length-1) * 2 ) * $('.slide ul li:first').outerWidth(true) + $('.slide').width();
+    let 
+    liHeight = $('.slide ul li:first').height(),
+    ulWidth = (($('.slide ul li').length-1) * 2 ) * $('.slide ul li:first').outerWidth(true),
+    slideWidth = (($('.slide ul li').length-1) * 2 ) * $('.slide ul li:first').outerWidth(true) + $('.slide').width();
     
     $('.slide').width(slideWidth).height(liHeight).css('transform',`translateX(-${ulWidth/2}px)`);
     $('.slide ul').draggable({ axis: "x", scroll: false, containment: ".slide" });

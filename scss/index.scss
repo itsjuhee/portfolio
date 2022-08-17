@@ -112,7 +112,7 @@ main {
             }
             .exp {
                 .des {
-                    margin: 4% 0 6%;
+                    margin: 2% 0 6%;
                 }
                 .txt {
                     margin-bottom: 3%;
@@ -225,9 +225,7 @@ main {
                     }
                 }
             }
-            ul {
-                text-align: center;
-            }
+            ul {text-align: center;}
         }
     }
 }
@@ -247,7 +245,7 @@ footer {
         li {
             .txt {
                 p {font-size: 20px; font-weight: 500; margin-bottom: 4%;}
-                span {color: #797979;}
+                span, a {color: #797979;}
             }
         }
     }
@@ -310,6 +308,7 @@ footer {
             }
         }
         .detail {
+            margin: 0 auto;
             img {
                 width: 100%;
                 margin: 5% 0 10%;
