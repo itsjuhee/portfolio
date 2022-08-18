@@ -523,6 +523,9 @@ footer ul li .txt span, footer ul li .txt a {
 .layer-popup .popup .detail {
   margin: 0 auto;
 }
+.layer-popup .popup .detail video {
+  width: 100%;
+}
 .layer-popup .popup .detail img {
   width: 100%;
   margin: 5% 0 10%;

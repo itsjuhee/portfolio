@@ -124,7 +124,7 @@ $.ajax({
                     </div>
                 </div>
                 <div class="detail">
-                    <img src="${p[0].video}" alt="detail">
+                    <video src="${p[0].video}" autoplay loop></video>
                     <img src="${p[0].img1}" alt="detail">
                     <img src="${p[0].img2}" alt="detail">
                     <img src="${p[0].img3}" alt="detail">
