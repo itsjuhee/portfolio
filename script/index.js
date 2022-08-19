@@ -66,9 +66,21 @@ $(function(){
     liHeight = $('.slide ul li:first').height(),
     ulWidth = (($('.slide ul li').length-1) * 2 ) * $('.slide ul li:first').outerWidth(true),
     slideWidth = (($('.slide ul li').length-1) * 2 ) * $('.slide ul li:first').outerWidth(true) + $('.slide').width();
-    
+
     $('.slide').width(slideWidth).height(liHeight).css('transform',`translateX(-${ulWidth/2}px)`);
-    $('.slide ul').draggable({ axis: "x", scroll: false, containment: ".slide" });
+
+    // drag start and stop
+    $('.slide ul').draggable({ axis: "x", scroll: false, containment: ".slide" },
+    {
+        start: function(event, ui){
+            $(this).data('dragging', true);
+        },
+        stop: function(event, ui){
+            setTimeout(function(){
+                $(event.target).data('dragging', false);
+            }, 1);
+        }
+    });
 });
 
 // popup
@@ -171,6 +183,7 @@ $.ajax({
             });
         }
         $('.slide li').on('click', function(){
+            if($('.slide ul').data('dragging')) return;
             slidePopup($(this).index())
         })
     }
