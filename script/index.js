@@ -132,7 +132,7 @@ $.ajax({
                                 <span>${p[0].overview}</span>
                             </li>
                         </ul>
-                        <a href="${p[0].website}">GO TO WEBSITE</a>
+                        <a href="${p[0].website}" target="_blank">GO TO WEBSITE</a>
                     </div>
                 </div>
                 <div class="detail">
@@ -151,18 +151,26 @@ $.ajax({
             $('.popup').html(elPopup);
             $('.popup').css('background',`${p[0].bg}`,'color',`${p[0].font}`);
             $('.popup p, .popup span, .popup a').css('color',`${p[0].font}`);
-
+            
             $('.layer-popup').addClass('active');
+            
+            // mobil app
+            // const windowFeatures = "left=100,top=100,width=375,height=667";
+            // if (code == 12){
+            //     $('.overview .text a').on('click', function(){
+            //         window.open("https://itsjuhee.github.io/zara/", "", windowFeatures);
+            //     })
+            // }
 
             // no scroll
             $('html').css('overflow', 'hidden');
-
+            
             // close
             $('.popup .close').on('click', function(){
                 $('.layer-popup').removeClass('active');
                 $('html').css('overflow', 'scroll');
             });
-
+            
             // click out of popup 
             $(document).mouseup(function (p){
                 let layer = $('.layer-popup');
