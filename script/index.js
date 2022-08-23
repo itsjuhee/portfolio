@@ -49,7 +49,7 @@ function pagemove(){
     event.preventDefault();
 
     let idx = $(this).index();
-    let conTop = $(con).eq(idx).offset().top;
+    let conTop = $('.con').eq(idx).offset().top;
     $('html').animate({scrollTop: conTop},1000);
 
     $('nav a').removeClass('active');
