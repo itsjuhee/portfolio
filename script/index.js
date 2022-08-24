@@ -154,13 +154,13 @@ $.ajax({
             
             $('.layer-popup').addClass('active');
             
-            // mobil app
-            // const windowFeatures = "left=100,top=100,width=375,height=667";
-            // if (code == 12){
-            //     $('.overview .text a').on('click', function(){
-            //         window.open("https://itsjuhee.github.io/zara/", "", windowFeatures);
-            //     })
-            // }
+            // mobile app
+            const windowFeatures = "left=100,top=100,width=375,height=667";
+            if (code == 12){
+                $('.overview .text a').on('click', function(){
+                    window.open("https://itsjuhee.github.io/zara/", "", windowFeatures);
+                })
+            }
 
             // no scroll
             $('html').css('overflow', 'hidden');
