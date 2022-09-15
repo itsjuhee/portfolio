@@ -456,7 +456,12 @@ footer {
     main {
         .cover {
             .center {
-                p , span {font-size: 5rem;}
+                width: 90vw;
+                padding-top: 30vh;
+                p , span {font-size: 3.6rem;}
+                div {
+                    b {display: none;}
+                }
             }
         }
         .cont {
@@ -467,7 +472,6 @@ footer {
                     .des {p {width: 80vw;}}
                 }
                 .edu {
-                    // width: 80vw; margin: 6vh auto;
                     flex-direction: column;
                     .detail {margin-left: 0;}
                 }

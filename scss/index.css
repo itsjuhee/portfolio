@@ -647,8 +647,15 @@ footer ul li .txt span, footer ul li .txt a {
   .txt p {
     font-size: 1rem;
   }
+  main .cover .center {
+    width: 90vw;
+    padding-top: 30vh;
+  }
   main .cover .center p, main .cover .center span {
-    font-size: 5rem;
+    font-size: 3.6rem;
+  }
+  main .cover .center div b {
+    display: none;
   }
   main .cont .about .me {
     flex-direction: column;
