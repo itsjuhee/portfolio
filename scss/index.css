@@ -90,7 +90,6 @@ main {
 main .cover {
   width: 100vw;
   height: 100vh;
-  transform: translateX(-4vw);
   position: relative;
 }
 main .cover .center {
@@ -99,7 +98,16 @@ main .cover .center {
   padding-top: 20vh;
   text-align: center;
 }
-main .cover .center p:nth-of-type(1) {
+main .cover .center div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .cover .center div b {
+  text-align: left;
+  margin: 0 2%;
+}
+main .cover .center div:nth-of-type(1) {
   -webkit-animation: cover1 1s linear forwards;
           animation: cover1 1s linear forwards;
 }
@@ -119,29 +127,8 @@ main .cover .center p:nth-of-type(1) {
     transform: translateX(0%);
   }
 }
-main .cover .center p:nth-of-type(2) {
-  -webkit-animation: cover2 1s linear forwards;
-          animation: cover2 1s linear forwards;
-}
-@-webkit-keyframes cover2 {
-  0% {
-    transform: translate(-100%, -40%);
-  }
-  100% {
-    transform: translate(17%, -40%);
-  }
-}
-@keyframes cover2 {
-  0% {
-    transform: translate(-100%, -40%);
-  }
-  100% {
-    transform: translate(17%, -40%);
-  }
-}
-main .cover .center span {
-  display: block;
-  transform: translateY(-20%);
+main .cover .center div:nth-of-type(2) {
+  transform: translate(4%, -20%);
   -webkit-animation: cover3 5s forwards;
           animation: cover3 5s forwards;
 }
@@ -155,38 +142,24 @@ main .cover .center span {
     opacity: 0;
   }
 }
-main .cover .left {
-  position: absolute;
-  left: 33vw;
-  top: 59vh;
-  -webkit-animation: cover4 8s forwards;
-          animation: cover4 8s forwards;
+main .cover .center div:nth-of-type(3) {
+  -webkit-animation: cover2 1s linear forwards;
+          animation: cover2 1s linear forwards;
 }
-@-webkit-keyframes cover4 {
+@-webkit-keyframes cover2 {
   0% {
-    opacity: 0;
+    transform: translate(-100%, -40%);
+  }
+  100% {
+    transform: translate(4%, -40%);
   }
 }
-@keyframes cover4 {
+@keyframes cover2 {
   0% {
-    opacity: 0;
+    transform: translate(-100%, -40%);
   }
-}
-main .cover .right {
-  position: absolute;
-  right: 18vw;
-  top: 43vh;
-  -webkit-animation: cover4 8s forwards;
-          animation: cover4 8s forwards;
-}
-main .cover .right span {
-  display: block;
-  width: 260px;
-  padding-left: 20%;
-}
-@keyframes cover4 {
-  0% {
-    opacity: 0;
+  100% {
+    transform: translate(4%, -40%);
   }
 }
 main .sub-header {
@@ -237,10 +210,11 @@ main .cont .about .me {
 main .cont .about .me p {
   font-size: 1.5rem;
 }
-main .cont .about .edu {
+main .cont .about .me .des {
   width: 40vw;
-  margin-bottom: 10%;
-  transform: translateX(34vw);
+}
+main .cont .about .edu {
+  margin: 10% 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -249,6 +223,7 @@ main .cont .about .edu .detail {
   margin-left: 4vw;
 }
 main .cont .about .exp .des {
+  width: 38vw;
   margin: 2% 0 6%;
 }
 main .cont .about .exp .txt {
@@ -258,7 +233,12 @@ main .cont .about .exp .txt p {
   margin-bottom: 1%;
 }
 main .cont .about .exp .txt p span {
+  display: inline;
   margin-left: 0.5%;
+}
+main .cont .about .exp .txt span {
+  display: block;
+  width: 24vw;
 }
 main .cont .about .ski {
   margin: 20% auto;
@@ -408,8 +388,13 @@ main .cont .end .main.active p {
 main .cont .end ul {
   text-align: center;
 }
+main .cont .end ul li {
+  margin-top: 5%;
+}
 main .cont .end ul .txt {
+  margin: 0 auto;
   margin-bottom: 6vh;
+  width: 24vw;
 }
 
 footer {
@@ -539,18 +524,6 @@ footer ul li .txt span, footer ul li .txt a {
   .center p, .center span {
     font-size: 8rem;
   }
-  main .cover .left {
-    left: 30vw;
-    top: 62vh;
-  }
-  main .cover .right {
-    right: 14vw;
-    top: 45vh;
-  }
-  main .cont .about .edu {
-    width: 60vw;
-    transform: translateX(19vw);
-  }
   main .cont .about .ski h2 {
     font-size: 3rem;
   }
@@ -588,26 +561,18 @@ footer ul li .txt span, footer ul li .txt a {
   .txt p {
     font-size: 1.2rem;
   }
-  main .sub-header nav {
-    height: 5vh;
-  }
   main .sub-header nav a {
-    margin: 3% 0 3% 12%;
-  }
-  main .cover .left {
-    left: 19vw;
-    top: 46vh;
-  }
-  main .cover .right {
-    right: 0vw;
-    top: 35vh;
+    margin: 2% 0 2% 12%;
   }
   main .cont .about .me p {
     font-size: 1.2rem;
   }
-  main .cont .about .edu {
-    width: 70vw;
-    transform: translateX(10vw);
+  main .cont .about .exp .des {
+    width: 64vw;
+  }
+  main .cont .about .exp .txt span {
+    display: block;
+    width: 48vw;
   }
   main .cont .about .ski h2 {
     font-size: 3rem;
@@ -632,7 +597,10 @@ footer ul li .txt span, footer ul li .txt a {
   main .cont .end .main p {
     font-size: 6rem;
   }
-  main .cont .end .txt span {
+  main .cont .end ul .txt {
+    width: 40vw;
+  }
+  main .cont .end ul .txt span {
     font-size: 1rem;
   }
   footer .center p {
@@ -679,31 +647,8 @@ footer ul li .txt span, footer ul li .txt a {
   .txt p {
     font-size: 1rem;
   }
-  main .sub-header nav {
-    height: 6vh;
-  }
-  main .sub-header nav a {
-    margin: 4% 0 4% 10%;
-  }
-  main .cover .center {
-    padding-top: 40vh;
-  }
   main .cover .center p, main .cover .center span {
-    font-size: 3rem;
-  }
-  main .cover .left {
-    left: 20vw;
-    top: 58vh;
-    font-size: 0.8rem;
-  }
-  main .cover .right {
-    right: 10vw;
-    top: 36vh;
-    font-size: 0.8rem;
-  }
-  main .cover .right span {
-    font-size: 0.8rem;
-    width: 50vw;
+    font-size: 5rem;
   }
   main .cont .about .me {
     flex-direction: column;
@@ -711,14 +656,23 @@ footer ul li .txt span, footer ul li .txt a {
   main .cont .about .me p {
     font-size: 1.2rem;
   }
-  main .cont .about .edu {
+  main .cont .about .me .des p {
     width: 80vw;
-    margin: 6vh auto;
-    transform: translateX(0vw);
+  }
+  main .cont .about .edu {
     flex-direction: column;
   }
   main .cont .about .edu .detail {
     margin-left: 0;
+  }
+  main .cont .about .exp .des {
+    width: 80vw;
+  }
+  main .cont .about .exp .txt p span {
+    margin-left: 2%;
+  }
+  main .cont .about .exp .txt span {
+    width: 72vw;
   }
   main .cont .about .ski .center p, main .cont .about .ski .center span {
     font-size: 3rem;
@@ -772,11 +726,9 @@ footer ul li .txt span, footer ul li .txt a {
   }
   main .cont .end ul .txt {
     margin-bottom: 4vh;
+    width: 60vw;
   }
   main .cont .end ul .txt span {
-    display: block;
-    margin: 0 auto;
-    width: 60vw;
     font-size: 1rem;
   }
   footer {

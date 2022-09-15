@@ -14,49 +14,40 @@ main {
     width: 100%;
     .cover {
         width: 100vw; height: 100vh;
-        transform: translateX(-4vw);
         position: relative;
         .center {
-            width: 80vw; margin: 0 auto; padding-top: 20vh;
+            width: 80vw; 
+            margin: 0 auto; 
+            padding-top: 20vh;
             text-align: center;
-            p:nth-of-type(1) {
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                b {
+                    text-align: left;
+                    margin: 0 2%;
+                }
+            }
+            div:nth-of-type(1) {
                 animation: cover1 1s linear forwards;
                 @keyframes cover1 {
                     0% {transform: translateX(100%);}
                     100% {transform: translateX(0%);}
                 }
             }
-            p:nth-of-type(2) {
-                animation: cover2 1s linear forwards;
-                @keyframes cover2 {
-                    0% {transform: translate(-100%,-40%);}
-                    100% {transform: translate(17%,-40%);}
-                }
-            }
-            span {
-                display: block;
-                transform: translateY(-20%);
+            div:nth-of-type(2) {
+                transform: translate(4%,-20%);
                 animation: cover3 5s forwards;
                 @keyframes cover3 {0% {opacity: 0;}}
             }
-            
-        }
-        .left {
-            position: absolute;
-            left: 33vw; top: 59vh;
-            animation: cover4 8s forwards;
-            @keyframes cover4 {0% {opacity: 0;}}
-        }
-        .right {
-            position: absolute;
-            right: 18vw; top: 43vh;
-            span {
-                display: block;
-                width: 260px;
-                padding-left: 20%;
+            div:nth-of-type(3) {
+                animation: cover2 1s linear forwards;
+                @keyframes cover2 {
+                    0% {transform: translate(-100%,-40%);}
+                    100% {transform: translate(4%,-40%);}
+                }
             }
-            animation: cover4 8s forwards;
-            @keyframes cover4 {0% {opacity: 0;}}
         }
     }
     .sub-header {
@@ -103,27 +94,31 @@ main {
                 justify-content: space-between;
                 align-items: flex-start;
                 p {font-size: 1.5rem;}
+                .des {
+                    width: 40vw;
+                }
             }
             .edu {
-                width: 40vw; margin-bottom: 10%;
-                transform: translateX(34vw);
+                margin: 10% 0;
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
-                .detail {
-                    margin-left: 4vw;
-                }
+                .detail {margin-left: 4vw;}
             }
             .exp {
                 .des {
+                    width: 38vw;
                     margin: 2% 0 6%;
                 }
                 .txt {
                     margin-bottom: 3%;
                     p {
                         margin-bottom: 1%;
-                        span {margin-left: 0.5%;}
+                        span {display: inline; margin-left: 0.5%;}
                     }
+                    span {
+                        display: block;
+                        width: 24vw;}
                 }
             }
             .ski {
@@ -233,7 +228,12 @@ main {
             }
             ul {
                 text-align: center;
-                .txt {margin-bottom: 6vh;}
+                li {margin-top: 5%;}
+                .txt {
+                    margin: 0 auto; 
+                    margin-bottom: 6vh; 
+                    width: 24vw;
+                }
             }
         }
     }
@@ -339,16 +339,8 @@ footer {
 @media (min-width: 1190px) and (max-width: 1619px){
     .center {p , span {font-size: 8rem;}}
     main {
-        .cover {
-            .left {left: 30vw; top: 62vh;}
-            .right {right: 14vw; top: 45vh;}
-        }
         .cont {
             .about {
-                .edu {
-                    width: 60vw;
-                    transform: translateX(19vw);
-                }
                 .ski {
                     h2 {font-size: 3rem;}
                     .des {
@@ -383,19 +375,16 @@ footer {
     .txt p {font-size: 1.2rem;}
     main {
         .sub-header nav {
-            height: 5vh;
-            a {margin: 3% 0 3% 12%;}
-        }
-        .cover {
-            .left {left: 19vw; top: 46vh;}
-            .right {right: 0vw; top: 35vh;}
+            a {margin: 2% 0 2% 12%;}
         }
         .cont {
             .about {
                 .me {p {font-size: 1.2rem;}}
-                .edu {
-                    width: 70vw;
-                    transform: translateX(10vw);
+                .exp {
+                    .des {width: 64vw;}
+                    .txt {
+                        span {display: block; width: 48vw;}
+                    }
                 }
                 .ski {
                     h2 {font-size: 3rem;}
@@ -420,7 +409,12 @@ footer {
                 .main {
                     p {font-size: 6rem;}
                 }
-                .txt span {font-size: 1rem;}
+                ul {
+                    .txt {
+                        width: 40vw;
+                        span {font-size: 1rem;}
+                    }
+                }
             }
         }
     }
@@ -460,23 +454,9 @@ footer {
     .des p {font-size: 1.2rem;}
     .txt {p {font-size: 1rem;}}
     main {
-        .sub-header nav {
-            height: 6vh;
-            a {margin: 4% 0 4% 10%;}
-        }
         .cover {
             .center {
-                padding-top: 40vh;
-                p , span {font-size: 3rem;}
-            }
-            .left {
-                left: 20vw; top: 58vh;
-                font-size: 0.8rem;
-            }
-            .right {
-                right: 10vw; top: 36vh;
-                font-size: 0.8rem;
-                span {font-size: 0.8rem; width: 50vw;}
+                p , span {font-size: 5rem;}
             }
         }
         .cont {
@@ -484,12 +464,19 @@ footer {
                 .me {
                     flex-direction: column;
                     p {font-size: 1.2rem;}
+                    .des {p {width: 80vw;}}
                 }
                 .edu {
-                    width: 80vw; margin: 6vh auto;
-                    transform: translateX(0vw);
+                    // width: 80vw; margin: 6vh auto;
                     flex-direction: column;
                     .detail {margin-left: 0;}
+                }
+                .exp {
+                    .des {width: 80vw;}
+                    .txt {
+                        p {span {margin-left: 2%;}}
+                        span {width: 72vw;}
+                    }
                 }
                 .ski {
                     .center {
@@ -538,12 +525,8 @@ footer {
                 ul {
                     .txt {
                         margin-bottom: 4vh;
-                        span {
-                            display: block;
-                            margin: 0 auto;
-                            width: 60vw;
-                            font-size: 1rem;
-                        }
+                        width: 60vw;
+                        span {font-size: 1rem;}
                     }
                 }
             }
